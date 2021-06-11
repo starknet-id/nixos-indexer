@@ -10,8 +10,7 @@
   ];
 
   boot = {
-    #kernelParams = [ "net.ifnames=0" "biosdevname=0" ];
-    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     cleanTmpDir = true;
   };
 
