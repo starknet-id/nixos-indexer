@@ -4,7 +4,7 @@
   security.acme.email = "thomas.marchand@tuta.io";
 
   services.nginx = {
-    enable = false;
+    enable = true;
 
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
