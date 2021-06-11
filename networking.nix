@@ -1,13 +1,13 @@
 { lib, ... }: {
   services.openssh = {
     enable = true;
-    ports = [ 4387 ];
+    ports = [ 9473 ];
     permitRootLogin = "no";
     passwordAuthentication = true;
   };
 
   networking = {
-    hostName = "thor";
+    hostName = "hera";
     firewall = {
       enable = false;
       allowPing = true;
