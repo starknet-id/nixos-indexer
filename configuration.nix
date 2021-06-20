@@ -7,6 +7,7 @@
 
     ./services/dear.nix
     ./services/louis-a-dit.nix
+    ./services/minecraft.nix
   ];
 
   boot = {
