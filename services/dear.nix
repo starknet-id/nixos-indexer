@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  dear_python = python39.withPackages
+  dear_python = pkgs.python39.withPackages
     (python-packages: with python-packages; [ discordpy toml ]);
 in {
   systemd.services.dear = {
