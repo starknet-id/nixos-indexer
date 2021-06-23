@@ -12,8 +12,6 @@
       Restart = "no";
     };
 
-    environment = { JAVA_HOME = pkgs.adoptopenjdk-jre-hotspot-bin-16; };
-
     wantedBy = [ "multi-user.target" ];
   };
 }
