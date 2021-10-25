@@ -6,7 +6,7 @@
     ./web.nix
 
     ./services/dear.nix
-    ./services/louis-a-dit.nix
+    #./services/louis-a-dit.nix
     ./services/minecraft.nix
   ];
 
