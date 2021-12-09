@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   dear_python = pkgs.python39.withPackages
-    (python-packages: with python-packages; [ discordpy toml ]);
+    (python-packages: with python-packages; [ (callPackage ./py/discordpy.nix { }) toml ]);
 in {
   systemd.services.dear = {
     description = "PROGRAMMESWAG";
