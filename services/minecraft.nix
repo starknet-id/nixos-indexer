@@ -6,7 +6,7 @@
     serviceConfig = {
       Type = "simple";
       User = "thomas";
-      ExecStart = "${pkgs.jre_minimal}/bin/java -jar ./server.jar";
+      ExecStart = "${pkgs.jdk}/bin/java -jar ./server.jar";
       WorkingDirectory = "/home/thomas/services/minecraft";
       Restart = "no";
     };
