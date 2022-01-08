@@ -18,6 +18,10 @@
       CREATE EXTENSION postgis;
       CREATE EXTENSION postgis_raster; -- OPTIONAL
       CREATE EXTENSION postgis_topology; -- OPTIONAL
+      CREATE TABLE colonies (
+        id INTEGER,
+        location geometry(POINT)
+      );
     '';
   };
 
