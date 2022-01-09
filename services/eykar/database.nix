@@ -13,7 +13,7 @@
       CREATE ROLE eykache WITH LOGIN PASSWORD 'eykache' CREATEDB;
       CREATE DATABASE eykache;
       GRANT ALL PRIVILEGES ON DATABASE eykache TO eykache;
-      SELECT eykache;
+      ALTER USER eykache WITH SUPERUSER;
       CREATE EXTENSION IF NOT EXISTS plpgsql;
       CREATE EXTENSION postgis;
       CREATE EXTENSION postgis_raster; -- OPTIONAL
