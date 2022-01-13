@@ -20,7 +20,7 @@
       CREATE EXTENSION postgis_topology; -- OPTIONAL
       CREATE TABLE colonies (
         id INTEGER,
-        location geometry(POINT)
+        location geometry(POINT) UNIQUE
       );
     '';
   };
