@@ -31,4 +31,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
+services/eykar/web3.py
+services/eykar/web3.py/*
 # End of https://www.toptal.com/developers/gitignore/api/macos
