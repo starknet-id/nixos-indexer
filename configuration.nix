@@ -7,6 +7,7 @@
 
     ./services/dear.nix
     ./services/eykar/database.nix
+    ./services/eykar/eykache.nix
     #./services/louis-a-dit.nix
     ./services/minecraft.nix
   ];
