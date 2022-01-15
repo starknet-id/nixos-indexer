@@ -26,20 +26,22 @@ let
     ignoreCollisions = true;
   };
 in {
-  description = "PROGRAMMESWAG";
-  after = [ "network.target" ];
+  systemd.services.eykache = {
+    description = "PROGRAMMESWAG";
+    after = [ "network.target" ];
 
-  serviceConfig = {
-    Type = "simple";
-    User = "thomas";
-    ExecStart = polymath + "/bin/python ./run";
-    WorkingDirectory = "/home/thomas/services/eykache";
-    Restart = "on-failure";
+    serviceConfig = {
+      Type = "simple";
+      User = "thomas";
+      ExecStart = polymath + "/bin/python ./run";
+      WorkingDirectory = "/home/thomas/services/eykache";
+      Restart = "on-failure";
+    };
+
+    environment = {
+      PYTHON_HOME = mach-nix.nixpkgs.mkPython { buildInputs = [ pyEnv ]; };
+    };
+
+    wantedBy = [ "multi-user.target" ];
   };
-
-  environment = {
-    PYTHON_HOME = mach-nix.nixpkgs.mkPython { buildInputs = [ pyEnv ]; };
-  };
-
-  wantedBy = [ "multi-user.target" ];
 }
