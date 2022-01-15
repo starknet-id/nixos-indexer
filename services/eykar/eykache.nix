@@ -25,6 +25,7 @@ let
     providers = { _default = "nixpkgs,sdist,wheel"; };
     ignoreCollisions = true;
   };
+in let eykachepy = mach-nix.nixpkgs.mkPython { buildInputs = [ pyEnv ]; };
 in {
   systemd.services.eykache = {
     description = "PROGRAMMESWAG";
@@ -33,13 +34,9 @@ in {
     serviceConfig = {
       Type = "simple";
       User = "thomas";
-      ExecStart = polymath + "/bin/python ./run";
+      ExecStart = eykachepy + "/bin/python ./run";
       WorkingDirectory = "/home/thomas/services/eykache";
       Restart = "on-failure";
-    };
-
-    environment = {
-      PYTHON_HOME = mach-nix.nixpkgs.mkPython { buildInputs = [ pyEnv ]; };
     };
 
     wantedBy = [ "multi-user.target" ];
