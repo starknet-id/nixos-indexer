@@ -10,7 +10,6 @@ let
     pypiDataRev = "aa41bbda98d5f4333f24fd7090cc8efd3aa5825c";
     pypiDataSha256 = "1iv08mhqdp5vq5g1fkig5wy3mvcxbd9ka6xsblsbjs4wdcbwflip";
   };
-
   pyEnv = mach-nix.mkPython rec {
     requirements = ''
       cython
@@ -25,7 +24,6 @@ let
     providers = { _default = "nixpkgs,sdist,wheel"; };
     ignoreCollisions = true;
   };
-in let eykachepy = mach-nix.nixpkgs.mkPython { buildInputs = [ pyEnv ]; };
 in {
   systemd.services.eykache = {
     description = "PROGRAMMESWAG";
@@ -34,7 +32,7 @@ in {
     serviceConfig = {
       Type = "simple";
       User = "thomas";
-      ExecStart = eykachepy + "/bin/python ./run";
+      ExecStart = pyEnv + "/bin/python ./run";
       WorkingDirectory = "/home/thomas/services/eykache";
       Restart = "on-failure";
     };
