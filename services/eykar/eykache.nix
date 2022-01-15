@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 with pkgs;
 let
   mach-nix = import (builtins.fetchGit {
