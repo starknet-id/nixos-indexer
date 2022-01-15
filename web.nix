@@ -39,8 +39,22 @@
           config
         ];
     in {
-      "projet-info-maths.sexy" =
-        vhost { root = "/var/www/projet-info-maths-sexy/"; };
+      "cache.eykar.org" = vhost {
+        locations."/" = {
+          extraConfig = ''
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_redirect off;
+            proxy_buffering off;
+            charset UTF-8;
+          '';
+          proxyPass = "http://eykache.aiohttp";
+        };
+      };
+    };
+    upstreams = {
+      "eykache.aiohttp".servers."127.0.0.1:8080 fail_timeout=0" = { };
     };
   };
 
