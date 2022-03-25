@@ -7,7 +7,7 @@
     serviceConfig = {
       Type = "simple";
       User = "thomas";
-      ExecStart = "./env/bin/python eykache";
+      ExecStart = "env/bin/python eykache";
       WorkingDirectory = "/home/thomas/services/eykache";
       Restart = "on-failure";
     };
