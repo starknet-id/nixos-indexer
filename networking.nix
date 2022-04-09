@@ -11,7 +11,7 @@
     firewall = {
       enable = false;
       allowPing = true;
-      allowedTCPPorts = [ 80 443 6000 25565 8146 ]; # HTTP, SSL, TOR, MINECRAFT
+      allowedTCPPorts = [ 80 443 6000 25565 8146 5432 ]; # HTTP, SSL, TOR, MINECRAFT, SQL
     };
   };
 }
