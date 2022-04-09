@@ -11,7 +11,6 @@
       host all all ::1/128 trust
       # remote connections
       host all all 0.0.0.0/0 md5
-      host all all :/0 md5
     '';
     initialScript = pkgs.writeText "backend-initScript" ''
       CREATE ROLE eykache WITH LOGIN PASSWORD 'eykache' CREATEDB;
