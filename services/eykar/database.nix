@@ -25,6 +25,7 @@
         id INTEGER,
         location geometry(POINT) UNIQUE
       );
+      CREATE INDEX IF NOT EXISTS plots ON colonies USING GIST (location);
     '';
   };
 
