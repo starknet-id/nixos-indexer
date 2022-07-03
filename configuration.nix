@@ -8,17 +8,13 @@
     ./services/dear.nix
     ./services/eykar/database.nix
     ./services/eykar/eykache.nix
-    #./services/louis-a-dit.nix
+    ./services/starknetid.nix
     ./services/minecraft.nix
   ];
 
-  boot = {
-    cleanTmpDir = true;
-  };
+  boot = { cleanTmpDir = true; };
 
   # Packages
-  environment.systemPackages = with pkgs; [
-     wget git
-  ];
+  environment.systemPackages = with pkgs; [ wget git ];
 
 }
