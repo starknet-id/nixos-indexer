@@ -9,6 +9,7 @@
     ./services/eykar/database.nix
     ./services/eykar/eykache.nix
     ./services/starknetid/verifier.nix
+    ./services/starknetid/indexer.nix
     ./services/minecraft.nix
   ];
 
