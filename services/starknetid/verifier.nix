@@ -1,6 +1,6 @@
 { pkgs, ... }:
  {
-  systemd.services.starknetid = {
+  systemd.services.starknetid_verifier = {
     description = "PROGRAMMESWAG";
     after = [ "network.target" ];
 

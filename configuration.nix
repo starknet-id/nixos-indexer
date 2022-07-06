@@ -8,7 +8,7 @@
     ./services/dear.nix
     ./services/eykar/database.nix
     ./services/eykar/eykache.nix
-    ./services/starknetid.nix
+    ./services/starknetid/verifier.nix
     ./services/minecraft.nix
   ];
 
