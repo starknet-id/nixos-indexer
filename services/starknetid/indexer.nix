@@ -8,7 +8,7 @@
     serviceConfig = {
       Type = "simple";
       User = "thomas";
-      ExecStart = "docker-compose up";
+      ExecStart = pkgs.docker-compose + "/bin/docker-compose up";
       WorkingDirectory = "/home/thomas/services/starknetid/indexer";
       Restart = "on-failure";
     };
