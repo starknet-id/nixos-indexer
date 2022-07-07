@@ -11,7 +11,7 @@ let
 in {
   virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [ docker-compose ];
-  systemd.services.dear = {
+  systemd.services.starknetid_indexer = {
     description = "PROGRAMMESWAG";
     after = [ "network.target" ];
 
