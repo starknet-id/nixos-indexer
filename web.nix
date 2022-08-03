@@ -52,7 +52,7 @@
           proxyPass = "http://eykache.aiohttp";
         };
       };
-      "verify.starknet.id" = vhost {
+      "verifier.starknet.id" = vhost {
         locations."/" = {
           extraConfig = ''
             proxy_http_version 1.1;
