@@ -52,7 +52,20 @@
           proxyPass = "http://eykache.aiohttp";
         };
       };
-      "verifier.starknet.id" = vhost {
+      "goerli.verifier.starknet.id" = vhost {
+        locations."/" = {
+          extraConfig = '' 
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_redirect off;
+            proxy_buffering off;
+            charset UTF-8;
+          '';
+          proxyPass = "http://goerli_starknetid_verifier.aiohttp";
+        };
+      };
+      "goerli.indexer.starknet.id" = vhost {
         locations."/" = {
           extraConfig = ''
             proxy_http_version 1.1;
@@ -62,13 +75,16 @@
             proxy_buffering off;
             charset UTF-8;
           '';
-          proxyPass = "http://starknetid.aiohttp";
+          proxyPass = "http://goerli_starknetid_indexer.aiohttp";
         };
       };
     };
     upstreams = {
       "eykache.aiohttp".servers."127.0.0.1:8080 fail_timeout=0" = { };
-      "starknetid.aiohttp".servers."127.0.0.1:8081 fail_timeout=0" = { };
+      "goerli_starknetid_verifier.aiohttp".servers."127.0.0.1:8081 fail_timeout=0" =
+        { };
+      "goerli_starknetid_indexer.aiohttp".servers."127.0.0.1:8082 fail_timeout=0" =
+        { };
     };
   };
 
