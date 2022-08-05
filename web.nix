@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {
 
   security.acme.acceptTerms = true;
-  security.acme.email = "thomas.marchand@tuta.io";
+  security.acme.defaults.email = "thomas.marchand@tuta.io";
 
   services.nginx = {
     enable = true;
