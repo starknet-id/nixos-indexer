@@ -5,7 +5,7 @@
 
 {
   imports = [ ];
-
+  boot.loader.grub.device = "/dev/vda";
   boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
